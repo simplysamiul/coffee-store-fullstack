@@ -1,9 +1,9 @@
-import React from 'react';
+import AddCoffee from '../components/dashboard/AddCoffee';
 
 const DetailsPage = () => {
     return (
         <div>
-            This is details page
+            <AddCoffee />
         </div>
     );
 };
