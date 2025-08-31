@@ -1,0 +1,11 @@
+.header-area{
+    background-image: url('../assets/more/3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 70vh;
+}
+
+.header-content{
+    /* width: 50%; */
+}

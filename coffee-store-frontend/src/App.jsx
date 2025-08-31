@@ -6,7 +6,7 @@ import { Outlet } from "react-router";
 function App() {
 
   return (
-    <>
+    <div className='font-primary'>
     {/* this is navbar section */}
       <nav>
         <Navbar />
@@ -16,10 +16,10 @@ function App() {
       <Outlet />
 
       <footer>
-        <Footer />
+        {/* <Footer /> */}
       </footer>
       
-    </>
+    </div>
   )
 }
 
