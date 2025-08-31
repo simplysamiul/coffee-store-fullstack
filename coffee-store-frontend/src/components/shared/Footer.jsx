@@ -9,7 +9,7 @@ import '../../style/Footer.css';
 
 const Footer = () => {
     return (
-        <div className=''>
+        <div className='border-t-1 border-chocoLight mt-15'>
             <div className="footer-container w-10/12 mx-auto pt-10 pb-10">
                 <div className="footer-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-start lg:justify-items-center gap-6">
                     <div className="footer-left-content">
