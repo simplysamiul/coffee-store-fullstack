@@ -38,6 +38,13 @@ async function run() {
             res.send(result);
         });
 
+        // get all coffee
+        app.get("/all-coffee", async(req,res) => {
+            const cursor = coffeeStoreCollection.find();
+            const result = await cursor.toArray();
+            res.send(result);
+        })
+
 
 
         // Send a ping to confirm a successful connection

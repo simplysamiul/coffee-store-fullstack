@@ -46,6 +46,7 @@ const AddCoffee = () => {
                                 <option>Cappuccino</option>
                                 <option>Latte</option>
                                 <option>Mocha</option>
+                                <option>Espresso</option>
                                 <option>Americano</option>
                             </select>
                             <legend className="fieldset-legend text-chocoDark text-lg mt-6">Coffee Photo</legend>
