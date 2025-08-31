@@ -1,3 +1,4 @@
+import Coffees from "../components/Coffees";
 import Header from "../components/Header";
 import Propertise from "../components/Propertise";
 
@@ -7,6 +8,7 @@ const HomePage = () => {
         <div>
             <Header />
             <Propertise />
+            <Coffees />
         </div>
     );
 };

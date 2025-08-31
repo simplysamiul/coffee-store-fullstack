@@ -9,10 +9,10 @@ const AddCoffee = () => {
         const category = form.category.value;
         const photoURL = form.photoURL.value;
         const chef = form.chef.value;
-        const taste = form.taste.value;
+        const price = form.price.value;
         const details = form.details.value;
         const quantity = form.quantity.value;
-        const coffeeInfo = {name, supplier, category, photoURL, chef, taste, details, quantity};
+        const coffeeInfo = {name, supplier, category, photoURL, chef, price, details, quantity};
         // send coffee in the databse
         fetch("http://localhost:5000/add-coffee",{
             method: "POST", 
@@ -56,7 +56,7 @@ const AddCoffee = () => {
                             <legend className="fieldset-legend text-chocoDark text-lg mt-6">Chef</legend>
                             <input required name="chef" type="text" className="input w-full border-1 border-chocoLight text-chocoDark" placeholder="Enter coffee chef" />
                             <legend className="fieldset-legend text-chocoDark text-lg mt-6">Price</legend>
-                            <input required name="taste" type="number" className="input w-full border-1 border-chocoLight text-chocoDark" placeholder="Enter coffee price" />
+                            <input required name="price" type="number" className="input w-full border-1 border-chocoLight text-chocoDark" placeholder="Enter coffee price" />
                             <legend className="fieldset-legend text-chocoDark text-lg mt-6">Details</legend>
                             <input required name="details" type="text" className="input w-full border-1 border-chocoLight text-chocoDark" placeholder="Enter coffee details" />
                             <legend className="fieldset-legend text-chocoDark text-lg mt-6">Quantity</legend>
