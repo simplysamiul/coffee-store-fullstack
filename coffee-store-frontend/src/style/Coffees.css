@@ -1,0 +1,13 @@
+.coffee-list-area{
+    background-image: url('../assets/more/1.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.swal2-confirm{
+    background: #331A15;
+}
+.swal2-confirm:hover{
+    background: #E3B577;
+}
