@@ -2,12 +2,12 @@ import { IoEye } from "react-icons/io5";
 import { IoPencilOutline } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2"
+import {Link} from "react-router";
 import '../style/Coffees.css'
 
 const Coffee = ({ coffee }) => {
     const { name, chef, photoURL, price, _id } = coffee;
     const handelDelete = (id) => {
-        console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -18,11 +18,21 @@ const Coffee = ({ coffee }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
+
+
+                fetch(`http://localhost:5000/coffee/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Coffee has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
             }
         });
     }
@@ -38,7 +48,7 @@ const Coffee = ({ coffee }) => {
             </div>
             <div className="flex flex-col">
                 <button className="btn p-2 m-2 text-xl bg-chocoLight text-white"><IoEye /></button>
-                <button className="btn p-2 m-2 text-xl bg-[#3C393B] text-white"><IoPencilOutline /></button>
+                <Link to={`/update-coffee/${_id}`}><button className="btn p-2 m-2 text-xl bg-[#3C393B] text-white"><IoPencilOutline /></button></Link>
                 <button onClick={() => handelDelete(_id)} className="btn p-2 m-2 text-xl bg-[#EA4744] text-white"><MdDelete /></button>
             </div>
         </div>

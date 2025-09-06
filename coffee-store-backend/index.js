@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const cors = require("cors");
 require('dotenv').config();
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 
 // use middleware
@@ -32,16 +32,56 @@ async function run() {
         const coffeeStoreCollection = client.db("coffee_store").collection("coffee_store_colledtion")
 
         // coffee add route
-        app.post("/add-coffee", async(req,res) => {
-            const newCoffee= req.body;
+        app.post("/add-coffee", async (req, res) => {
+            const newCoffee = req.body;
             const result = await coffeeStoreCollection.insertOne(newCoffee);
             res.send(result);
         });
 
         // get all coffee
-        app.get("/all-coffee", async(req,res) => {
+        app.get("/all-coffee", async (req, res) => {
             const cursor = coffeeStoreCollection.find();
             const result = await cursor.toArray();
+            res.send(result);
+        })
+
+        // specific coffee
+        app.get("/coffee/:id", async (req, res) => {
+            const id = req.params.id;
+            const cursor = { _id: new ObjectId(id) };
+            const result = await coffeeStoreCollection.findOne(cursor);
+            res.send(result);
+        })
+
+        // update specific coffee
+        app.put("/coffee/:id", async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: new ObjectId(id) };
+            const options = { upsert: true };
+            const updateCoffee = req.body;
+            const coffee = {
+                $set: {
+                    name: updateCoffee.name,
+                    supplier: updateCoffee.supplier,
+                    category: updateCoffee.category,
+                    photoURL: updateCoffee.photoURL,
+                    chef: updateCoffee.chef,
+                    price: updateCoffee.price,
+                    details: updateCoffee.details,
+                    quantity: updateCoffee.quantity
+                }
+            };
+
+            const result = await coffeeStoreCollection.updateOne(filter, coffee, options);
+            res.send(result);
+
+        })
+
+        // delete specifrric coffee
+        app.delete("/coffee/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) }
+            const result = await coffeeStoreCollection.deleteOne(query);
             res.send(result);
         })
 
