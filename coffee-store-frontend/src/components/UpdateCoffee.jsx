@@ -47,7 +47,7 @@ const UpdateCoffee = ({ data }) => {
                                         });
                                         form.reset();
                                     }
-                                }).catch(err => toast.success(err.message, { theme: "colored" }))
+                                }).catch(err => toast.error(err.message, { theme: "colored" }))
                         }
                     });
 

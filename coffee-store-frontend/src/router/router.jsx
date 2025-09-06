@@ -3,6 +3,8 @@ import HomePage from "../pages/HomePage";
 import App from "../App";
 import AddCoffeePage from "../pages/AddCoffeePage";
 import UpdateCoffeePage from "../pages/UpdateCoffeePage";
+import SignUpPage from "../pages/SignUpPage";
+import SignInPage from "../pages/SignInPage";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
                 path: "/update-coffee/:id",
                 element: <UpdateCoffeePage />,
                 loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+            },
+            {
+                path : "/login",
+                element: <SignInPage />
+            },
+            {
+                path: "/signup",
+                element: <SignUpPage />
             }
         ]
     },

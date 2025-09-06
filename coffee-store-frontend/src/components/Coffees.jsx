@@ -24,7 +24,12 @@ const Coffees = () => {
             </div>
             <div className="coffee-list-container grid grid-cols-1 md:grid-cols-2 w-10/12 mx-auto gap-10">
                 {
-                    coffees.map(coffee => <Coffee key={coffee._id} coffee={coffee} />)
+                    coffees.map(coffee => <Coffee 
+                        key={coffee._id} 
+                        coffee={coffee} 
+                        setCoffees={setCoffees}
+                        coffees={coffees}
+                        />)
                 }
             </div>
         </div>

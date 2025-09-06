@@ -29,7 +29,8 @@ async function run() {
         await client.connect();
 
         // databse and database collection name
-        const coffeeStoreCollection = client.db("coffee_store").collection("coffee_store_colledtion")
+        const coffeeStoreCollection = client.db("coffee_store").collection("coffee_store_colledtion");
+        const userCollection = client.db("coffee_store").collection("users");
 
         // coffee add route
         app.post("/add-coffee", async (req, res) => {
@@ -85,6 +86,14 @@ async function run() {
             res.send(result);
         })
 
+
+        // users related api
+        app.post("/users", async(req,res) =>{
+            const newUser = req.body;
+            console.log(newUser)
+            const result = await userCollection.insertOne(newUser);
+            res.send(result);
+        })
 
 
         // Send a ping to confirm a successful connection

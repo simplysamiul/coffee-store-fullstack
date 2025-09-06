@@ -5,7 +5,7 @@ import Swal from "sweetalert2"
 import {Link} from "react-router";
 import '../style/Coffees.css'
 
-const Coffee = ({ coffee }) => {
+const Coffee = ({ coffee, coffees, setCoffees }) => {
     const { name, chef, photoURL, price, _id } = coffee;
     const handelDelete = (id) => {
         Swal.fire({
@@ -31,6 +31,9 @@ const Coffee = ({ coffee }) => {
                                 text: "Coffee has been deleted.",
                                 icon: "success"
                             });
+
+                            const remainingCoffee = coffees.filter(coffee => id !== coffee._id );
+                            setCoffees(remainingCoffee);
                         }
                     })
             }
