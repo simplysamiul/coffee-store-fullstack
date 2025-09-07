@@ -5,6 +5,7 @@ import AddCoffeePage from "../pages/AddCoffeePage";
 import UpdateCoffeePage from "../pages/UpdateCoffeePage";
 import SignUpPage from "../pages/SignUpPage";
 import SignInPage from "../pages/SignInPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -17,11 +18,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-coffee",
-                element: <AddCoffeePage />
+                element: <PrivateRoute><AddCoffeePage /></PrivateRoute>
             },
             {
                 path: "/update-coffee/:id",
-                element: <UpdateCoffeePage />,
+                element: <PrivateRoute><UpdateCoffeePage /></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
             },
             {
