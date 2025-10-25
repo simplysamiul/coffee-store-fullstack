@@ -1,4 +1,8 @@
-# ☕ Coffee Store Management
+<div align="center">
+    <img src="https://i.ibb.co.com/PsgKLYq2/logo1.png" width="200"/>
+</div>
+
+# Coffee Store Management
 
 Coffee Store is a full-stack CRUD-based application that allows users to **manage a product inventory of various coffee items**. It includes a modern and clean UI for seamless interactions and a secure backend API using Express and MongoDB.
 
