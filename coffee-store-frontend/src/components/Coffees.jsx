@@ -8,7 +8,7 @@ import '../style/Coffees.css';
 const Coffees = () => {
     const [coffees, setCoffees] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/all-coffee")
+        fetch("https://coffee-store-backend-seven-bay.vercel.app/all-coffee")
             .then(res => res.json())
             .then(data => setCoffees(data))
             .catch(err => console.log(err));

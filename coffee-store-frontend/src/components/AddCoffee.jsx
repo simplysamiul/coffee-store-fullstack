@@ -14,7 +14,7 @@ const AddCoffee = () => {
         const quantity = form.quantity.value;
         const coffeeInfo = {name, supplier, category, photoURL, chef, price, details, quantity};
         // send coffee in the databse
-        fetch("http://localhost:5000/add-coffee",{
+        fetch("https://coffee-store-backend-seven-bay.vercel.app/add-coffee",{
             method: "POST", 
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(coffeeInfo)

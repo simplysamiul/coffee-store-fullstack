@@ -6,6 +6,7 @@ import UpdateCoffeePage from "../pages/UpdateCoffeePage";
 import SignUpPage from "../pages/SignUpPage";
 import SignInPage from "../pages/SignInPage";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             {
                 path: "/update-coffee/:id",
                 element: <PrivateRoute><UpdateCoffeePage /></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+                loader: ({params}) => fetch(`https://coffee-store-backend-seven-bay.vercel.app/coffee/${params.id}`)
             },
             {
                 path : "/login",
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "*",
+        element: <ErrorPage />
+    }
 ])
 
 

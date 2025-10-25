@@ -1,10 +1,12 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './provider/AuthProvider';
 import { toast } from "react-toastify";
 
 const SignUp = () => {
   const { createUser, loading, setLoading } = useContext(AuthContext);
+  const naviagte = useNavigate();
+
   const handelSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,7 +20,7 @@ const SignUp = () => {
       .then(res => {
         if (res.user) {
           // save new user info in databse
-          fetch("http://localhost:5000/users", {
+          fetch("https://coffee-store-backend-seven-bay.vercel.app/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userInfo)
@@ -29,6 +31,7 @@ const SignUp = () => {
                 toast.success("User createed successfully ....!", { theme: "colored" })
                 form.reset();
                 setLoading(false);
+                naviagte(location.state ? location.state : "/");
               }
             }).catch(err => {
               setLoading(false);

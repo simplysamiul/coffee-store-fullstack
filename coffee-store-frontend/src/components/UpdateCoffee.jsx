@@ -32,7 +32,7 @@ const UpdateCoffee = ({ data }) => {
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // update coffee
-                            fetch(`http://localhost:5000/coffee/${_id}`, {
+                            fetch(`https://coffee-store-backend-seven-bay.vercel.app/coffee/${_id}`, {
                                 method: "PUT",
                                 headers: {"Content-Type" : "application/json"},
                                 body : JSON.stringify(updateCoffee)
