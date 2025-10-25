@@ -86,6 +86,18 @@ This system is designed to help small businesses or cafés maintain an inventory
 
 ---
 
+## 🖼️ Project Preview Gallery
+
+A visual walkthrough of the ProFast interface and features.
+
+<div align="center">
+
+||||||||||||||||||||||||| Home Page ||||||||||||||||||||||||||
+| <img src="https://i.ibb.co.com/8D5sg7CZ/coffee-home.png" width="900"/> |
+
+</div>
+---
+
 ## 🧩 System Architecture Diagram
 
 ```mermaid
