@@ -1,4 +1,8 @@
-# ☕ Coffee Store Management
+<div align="center">
+    <img src="https://i.ibb.co.com/PsgKLYq2/logo1.png" width="200"/>
+</div>
+
+# Coffee Store Management
 
 Coffee Store is a full-stack CRUD-based application that allows users to **manage a product inventory of various coffee items**. It includes a modern and clean UI for seamless interactions and a secure backend API using Express and MongoDB.
 
@@ -40,6 +44,7 @@ This system is designed to help small businesses or cafés maintain an inventory
 | Update Coffee | Edit any existing item and store updates |
 | Delete Coffee | Remove product from database permanently |
 | Confirmation alerts | Safe UI interactions using SweetAlert |
+| Resgister/Login | Before take any action user have to login |
 | Fully responsive | Works on Desktop, Tablet, Mobile |
 
 ---
@@ -50,6 +55,7 @@ This system is designed to help small businesses or cafés maintain an inventory
 - Form validation for Coffee entry
 - Real-time database updates using fetch
 - Toast and modal interactions
+- Authentication process using firebase
 - Reusable UI components
 
 ---
@@ -72,6 +78,7 @@ This system is designed to help small businesses or cafés maintain an inventory
 - Tailwind CSS
 - DaisyUI
 - SweetAlert
+- Firebase
 - Fetch API / Axios (edit if required)
 
 ### Backend  
@@ -84,6 +91,18 @@ This system is designed to help small businesses or cafés maintain an inventory
 ### Deployment  
 - Vercel (For both frontend and backend hosting)
 
+---
+
+## 🖼️ Project Preview Gallery
+
+A visual walkthrough of the ProFast interface and features.
+
+<div align="center">
+
+||||||||||||||||||||||||| Home Page ||||||||||||||||||||||||||
+| <img src="https://i.ibb.co.com/8D5sg7CZ/coffee-home.png" width="900"/> |
+
+</div>
 ---
 
 ## 🧩 System Architecture Diagram
