@@ -40,6 +40,7 @@ This system is designed to help small businesses or cafés maintain an inventory
 | Update Coffee | Edit any existing item and store updates |
 | Delete Coffee | Remove product from database permanently |
 | Confirmation alerts | Safe UI interactions using SweetAlert |
+| Resgister/Login | Before take any action user have to login |
 | Fully responsive | Works on Desktop, Tablet, Mobile |
 
 ---
@@ -50,6 +51,7 @@ This system is designed to help small businesses or cafés maintain an inventory
 - Form validation for Coffee entry
 - Real-time database updates using fetch
 - Toast and modal interactions
+- Authentication process using firebase
 - Reusable UI components
 
 ---
@@ -72,6 +74,7 @@ This system is designed to help small businesses or cafés maintain an inventory
 - Tailwind CSS
 - DaisyUI
 - SweetAlert
+- Firebase
 - Fetch API / Axios (edit if required)
 
 ### Backend  
