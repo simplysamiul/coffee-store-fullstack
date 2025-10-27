@@ -19,7 +19,7 @@ Coffee Store is a full-stack CRUD-based application that allows users to **manag
 
 | Service | Link |
 |--------|------|
-| Frontend | https://coffee-store-7wzvhf7tz-simplysamiuls-projects.vercel.app/ |
+| Frontend | https://coffee-store-orpin.vercel.app/ |
 | Backend API | https://coffee-store-backend-seven-bay.vercel.app |
 
 ---
